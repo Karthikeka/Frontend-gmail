@@ -1,25 +1,37 @@
 import "./App.css";
-import Home from "./Components/Home";
-import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import Sidenav from "./Components/Sidenav";
-import BookList from "./Components/BookList";
-import AddBook from "./Components/AddBook";
-import EditBook from "./Components/EditBook";
+
+import {
+  Navigate,
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
+import { routes } from "./Data/Logo/routes";
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route>
+      <Route
+        path={routes.emails.path}
+        element={<Navigate to={`${routes.emails.path}/inbox`} />}
+      />
+      <Route
+        path={routes.invalid.path}
+        element={<Navigate to={`${routes.emails.path}/inbox`} />}
+      />
+      <Route path={routes.main.path} element={<routes.main.element />}>
+        <Route path={routes.view.path} element={<routes.view.element />} />
+        <Route
+          path={`${routes.emails.path}/:type`}
+          element={<routes.emails.element />}
+        />
+      </Route>
+    </Route>
+  )
+);
 
 function App() {
-  return (
-    <div className="App">
-      <Sidenav />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        {/* <Route path='/about' element={<About />} /> */}
-        <Route path='/books' element={<BookList />} />
-        <Route path='/addbook' element={<AddBook />} />
-        <Route path='/books/edit/:id' element={<EditBook />} />
-      </Routes>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
