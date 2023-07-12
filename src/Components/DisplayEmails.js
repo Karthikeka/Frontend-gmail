@@ -8,7 +8,7 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import List from '@mui/material/List';
 import { ListItem } from "@mui/material";
 import Email from "./Email.js";
-import { EMPTY_TABS } from "./Data/Logo/gmaillogo.js";
+import { EMPTY_TABS } from "../Data/Logo/gmaillogo.js";
 
 
 const DisplayEmails = () => {

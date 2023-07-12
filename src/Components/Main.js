@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "./Header";
 import { Box } from "@mui/material";
 import SideBar from "./Components/SideBar";
-import DisplayEmails from "./DisplayEmails";
+import DisplayEmails from "./components/display-emails";
 import { Outlet } from "react-router-dom";
 
 const Main = () => {
