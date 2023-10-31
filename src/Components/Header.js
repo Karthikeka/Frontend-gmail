@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <>
     <header>
-        <nav><h1>Forgot Password</h1>
+        <nav><h1>URL Shortner</h1>
 
         <div className="avtar">
             <Avatar style={{background:"blue"}}>N</Avatar>

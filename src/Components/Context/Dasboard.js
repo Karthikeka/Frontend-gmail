@@ -1,7 +1,8 @@
 import React, { useContext, useEffect ,useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { LoginContext } from './Context/Context';
-import {api} from "../urlConfig"
+import Topbar from '../Components/Topbar';
+import Home from '../Components/home/Home';
 
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
@@ -17,7 +18,7 @@ const Dasboard = () => {
     const DashboardValid = async () => {
         let token = localStorage.getItem("usersdatatoken");
 
-        const res = await fetch(`${api}/validuser`, {
+        const res = await fetch("/validuser", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -50,11 +51,11 @@ const Dasboard = () => {
     return (
         <>
             {
-                data ? <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                    <img src="./man.png" style={{ width: "200px", marginTop: 20 }} alt="" />
-                    <h1>User Name:{logindata ? logindata.ValidUserOne.fname : ""}</h1> <br />
-                    <h1>User Email:{logindata ? logindata.ValidUserOne.email : ""}</h1>
-                    
+                data ? <div>
+                    {/* <img src="./man.png" style={{ width: "200px", marginTop: 20 }} alt="" />
+                    <h1>User Email:{logindata ? logindata.ValidUserOne.email : ""}</h1> */}
+                    <Topbar/>
+          <Home/>
                 </div> : <Box sx={{ display: 'flex', justifyContent: "center", alignItems: "center", height: "100vh" }}>
                     Loading... &nbsp;
                     <CircularProgress />

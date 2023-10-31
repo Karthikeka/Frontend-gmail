@@ -6,9 +6,11 @@ import {Routes,Route} from "react-router-dom";
 import PasswordReset from "./Components/PasswordReset";
 import ForgotPassword from "./Components/ForgotPassword";
 import Register from "./Components/Register"
+
 function App() {
   return (
     <>
+    
       <Header/>
 
       <Routes>

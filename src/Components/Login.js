@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import {api} from "../urlConfig"
 import "../Components/mix.css"
 const Login = () => {
 
@@ -57,7 +56,7 @@ const Login = () => {
             // console.log("user login succesfully done");
 
 
-            const data = await fetch(`${api}/login`,{
+            const data = await fetch("/login",{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
